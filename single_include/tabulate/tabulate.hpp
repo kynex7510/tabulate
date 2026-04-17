@@ -6317,6 +6317,7 @@ SOFTWARE.
 #include <iostream>
 #include <memory>
 #include <string>
+#include <locale>
 // #include <tabulate/format.hpp>
 /*
   __        ___.         .__          __
@@ -6356,6 +6357,7 @@ SOFTWARE.
 #include <cstddef>
 #include <sstream>
 #include <string>
+#include <locale>
 // #include <tabulate/color.hpp>
 // #include <tabulate/font_align.hpp>
 // #include <tabulate/font_style.hpp>
@@ -8260,7 +8262,8 @@ public:
     std::stringstream stream;
     print(stream);
     auto buffer = stream.str();
-    auto lines = Format::split_lines(buffer, "\n", "", true);
+    auto locale = stream.getloc();
+    auto lines = Format::split_lines(buffer, "\n", locale, true);
     if (lines.size()) {
       result = {get_sequence_length(lines[0], "", true), lines.size()};
     }

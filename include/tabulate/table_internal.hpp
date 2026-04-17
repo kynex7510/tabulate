@@ -89,7 +89,7 @@ public:
     std::stringstream stream;
     print(stream);
     auto buffer = stream.str();
-	auto locale = stream.getloc();
+    auto locale = stream.getloc();
     auto lines = Format::split_lines(buffer, "\n", locale, true);
     if (lines.size()) {
       result = {get_sequence_length(lines[0], "", true), lines.size()};
