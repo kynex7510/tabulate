@@ -92,7 +92,7 @@ public:
     auto locale = stream.getloc();
     auto lines = Format::split_lines(buffer, "\n", locale, true);
     if (lines.size()) {
-      result = {get_sequence_length(lines[0], "", true), lines.size()};
+      result = {get_sequence_length(lines[0], locale, true), lines.size()};
     }
     return result;
   }
