@@ -135,7 +135,7 @@ inline Format &Cell::format() {
 }
 
 inline bool Cell::is_multi_byte_character_support_enabled() {
-  return (*format().multi_byte_characters_);
+  return false; //(*format().multi_byte_characters_);
 }
 
 inline Format &Row::format() {
